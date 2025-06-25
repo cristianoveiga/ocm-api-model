@@ -19,53 +19,53 @@ limitations under the License.
 
 package v1 // github.com/openshift-online/ocm-api-model/clientapi/clustersmgmt/v1
 
-// AWSBackupConfigListBuilder contains the data and logic needed to build
-// 'AWS_backup_config' objects.
-type AWSBackupConfigListBuilder struct {
-	items []*AWSBackupConfigBuilder
+// AwsBackupConfigListBuilder contains the data and logic needed to build
+// 'aws_backup_config' objects.
+type AwsBackupConfigListBuilder struct {
+	items []*AwsBackupConfigBuilder
 }
 
-// NewAWSBackupConfigList creates a new builder of 'AWS_backup_config' objects.
-func NewAWSBackupConfigList() *AWSBackupConfigListBuilder {
-	return new(AWSBackupConfigListBuilder)
+// NewAwsBackupConfigList creates a new builder of 'aws_backup_config' objects.
+func NewAwsBackupConfigList() *AwsBackupConfigListBuilder {
+	return new(AwsBackupConfigListBuilder)
 }
 
 // Items sets the items of the list.
-func (b *AWSBackupConfigListBuilder) Items(values ...*AWSBackupConfigBuilder) *AWSBackupConfigListBuilder {
-	b.items = make([]*AWSBackupConfigBuilder, len(values))
+func (b *AwsBackupConfigListBuilder) Items(values ...*AwsBackupConfigBuilder) *AwsBackupConfigListBuilder {
+	b.items = make([]*AwsBackupConfigBuilder, len(values))
 	copy(b.items, values)
 	return b
 }
 
 // Empty returns true if the list is empty.
-func (b *AWSBackupConfigListBuilder) Empty() bool {
+func (b *AwsBackupConfigListBuilder) Empty() bool {
 	return b == nil || len(b.items) == 0
 }
 
 // Copy copies the items of the given list into this builder, discarding any previous items.
-func (b *AWSBackupConfigListBuilder) Copy(list *AWSBackupConfigList) *AWSBackupConfigListBuilder {
+func (b *AwsBackupConfigListBuilder) Copy(list *AwsBackupConfigList) *AwsBackupConfigListBuilder {
 	if list == nil || list.items == nil {
 		b.items = nil
 	} else {
-		b.items = make([]*AWSBackupConfigBuilder, len(list.items))
+		b.items = make([]*AwsBackupConfigBuilder, len(list.items))
 		for i, v := range list.items {
-			b.items[i] = NewAWSBackupConfig().Copy(v)
+			b.items[i] = NewAwsBackupConfig().Copy(v)
 		}
 	}
 	return b
 }
 
-// Build creates a list of 'AWS_backup_config' objects using the
+// Build creates a list of 'aws_backup_config' objects using the
 // configuration stored in the builder.
-func (b *AWSBackupConfigListBuilder) Build() (list *AWSBackupConfigList, err error) {
-	items := make([]*AWSBackupConfig, len(b.items))
+func (b *AwsBackupConfigListBuilder) Build() (list *AwsBackupConfigList, err error) {
+	items := make([]*AwsBackupConfig, len(b.items))
 	for i, item := range b.items {
 		items[i], err = item.Build()
 		if err != nil {
 			return
 		}
 	}
-	list = new(AWSBackupConfigList)
+	list = new(AwsBackupConfigList)
 	list.items = items
 	return
 }

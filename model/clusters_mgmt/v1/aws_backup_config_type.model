@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 // Backup configuration for AWS clusters
-struct AWSBackupConfig {
+struct AwsBackupConfig {
     // ID of the AWS Disaster Recovery (DR) account
     AccountId           string
 

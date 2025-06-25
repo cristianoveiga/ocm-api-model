@@ -73,7 +73,7 @@ func WriteAWSShard(object *AWSShard, stream *jsoniter.Stream) {
 				}
 				item := object.backupConfigs[key]
 				stream.WriteObjectField(key)
-				WriteAWSBackupConfig(item, stream)
+				WriteAwsBackupConfig(item, stream)
 			}
 			stream.WriteObjectEnd()
 		} else {
@@ -109,13 +109,13 @@ func ReadAWSShard(iterator *jsoniter.Iterator) *AWSShard {
 			object.ecrRepositoryURLs = value
 			object.bitmap_ |= 1
 		case "backup_configs":
-			value := map[string]*AWSBackupConfig{}
+			value := map[string]*AwsBackupConfig{}
 			for {
 				key := iterator.ReadObject()
 				if key == "" {
 					break
 				}
-				item := ReadAWSBackupConfig(iterator)
+				item := ReadAwsBackupConfig(iterator)
 				value[key] = item
 			}
 			object.backupConfigs = value

@@ -26,10 +26,10 @@ import (
 	"github.com/openshift-online/ocm-api-model/clientapi/helpers"
 )
 
-// MarshalAWSBackupConfig writes a value of the 'AWS_backup_config' type to the given writer.
-func MarshalAWSBackupConfig(object *AWSBackupConfig, writer io.Writer) error {
+// MarshalAwsBackupConfig writes a value of the 'aws_backup_config' type to the given writer.
+func MarshalAwsBackupConfig(object *AwsBackupConfig, writer io.Writer) error {
 	stream := helpers.NewStream(writer)
-	WriteAWSBackupConfig(object, stream)
+	WriteAwsBackupConfig(object, stream)
 	err := stream.Flush()
 	if err != nil {
 		return err
@@ -37,8 +37,8 @@ func MarshalAWSBackupConfig(object *AWSBackupConfig, writer io.Writer) error {
 	return stream.Error
 }
 
-// WriteAWSBackupConfig writes a value of the 'AWS_backup_config' type to the given stream.
-func WriteAWSBackupConfig(object *AWSBackupConfig, stream *jsoniter.Stream) {
+// WriteAwsBackupConfig writes a value of the 'aws_backup_config' type to the given stream.
+func WriteAwsBackupConfig(object *AwsBackupConfig, stream *jsoniter.Stream) {
 	count := 0
 	stream.WriteObjectStart()
 	var present_ bool
@@ -80,21 +80,21 @@ func WriteAWSBackupConfig(object *AWSBackupConfig, stream *jsoniter.Stream) {
 	stream.WriteObjectEnd()
 }
 
-// UnmarshalAWSBackupConfig reads a value of the 'AWS_backup_config' type from the given
+// UnmarshalAwsBackupConfig reads a value of the 'aws_backup_config' type from the given
 // source, which can be an slice of bytes, a string or a reader.
-func UnmarshalAWSBackupConfig(source interface{}) (object *AWSBackupConfig, err error) {
+func UnmarshalAwsBackupConfig(source interface{}) (object *AwsBackupConfig, err error) {
 	iterator, err := helpers.NewIterator(source)
 	if err != nil {
 		return
 	}
-	object = ReadAWSBackupConfig(iterator)
+	object = ReadAwsBackupConfig(iterator)
 	err = iterator.Error
 	return
 }
 
-// ReadAWSBackupConfig reads a value of the 'AWS_backup_config' type from the given iterator.
-func ReadAWSBackupConfig(iterator *jsoniter.Iterator) *AWSBackupConfig {
-	object := &AWSBackupConfig{}
+// ReadAwsBackupConfig reads a value of the 'aws_backup_config' type from the given iterator.
+func ReadAwsBackupConfig(iterator *jsoniter.Iterator) *AwsBackupConfig {
+	object := &AwsBackupConfig{}
 	for {
 		field := iterator.ReadObject()
 		if field == "" {

@@ -19,10 +19,10 @@ limitations under the License.
 
 package v1 // github.com/openshift-online/ocm-api-model/clientapi/clustersmgmt/v1
 
-// AWSBackupConfigBuilder contains the data and logic needed to build 'AWS_backup_config' objects.
+// AwsBackupConfigBuilder contains the data and logic needed to build 'aws_backup_config' objects.
 //
 // Backup configuration for AWS clusters
-type AWSBackupConfigBuilder struct {
+type AwsBackupConfigBuilder struct {
 	bitmap_             uint32
 	s3Bucket            string
 	accountId           string
@@ -30,46 +30,46 @@ type AWSBackupConfigBuilder struct {
 	roleArn             string
 }
 
-// NewAWSBackupConfig creates a new builder of 'AWS_backup_config' objects.
-func NewAWSBackupConfig() *AWSBackupConfigBuilder {
-	return &AWSBackupConfigBuilder{}
+// NewAwsBackupConfig creates a new builder of 'aws_backup_config' objects.
+func NewAwsBackupConfig() *AwsBackupConfigBuilder {
+	return &AwsBackupConfigBuilder{}
 }
 
 // Empty returns true if the builder is empty, i.e. no attribute has a value.
-func (b *AWSBackupConfigBuilder) Empty() bool {
+func (b *AwsBackupConfigBuilder) Empty() bool {
 	return b == nil || b.bitmap_ == 0
 }
 
 // S3Bucket sets the value of the 'S3_bucket' attribute to the given value.
-func (b *AWSBackupConfigBuilder) S3Bucket(value string) *AWSBackupConfigBuilder {
+func (b *AwsBackupConfigBuilder) S3Bucket(value string) *AwsBackupConfigBuilder {
 	b.s3Bucket = value
 	b.bitmap_ |= 1
 	return b
 }
 
 // AccountId sets the value of the 'account_id' attribute to the given value.
-func (b *AWSBackupConfigBuilder) AccountId(value string) *AWSBackupConfigBuilder {
+func (b *AwsBackupConfigBuilder) AccountId(value string) *AwsBackupConfigBuilder {
 	b.accountId = value
 	b.bitmap_ |= 2
 	return b
 }
 
 // IdentityProviderArn sets the value of the 'identity_provider_arn' attribute to the given value.
-func (b *AWSBackupConfigBuilder) IdentityProviderArn(value string) *AWSBackupConfigBuilder {
+func (b *AwsBackupConfigBuilder) IdentityProviderArn(value string) *AwsBackupConfigBuilder {
 	b.identityProviderArn = value
 	b.bitmap_ |= 4
 	return b
 }
 
 // RoleArn sets the value of the 'role_arn' attribute to the given value.
-func (b *AWSBackupConfigBuilder) RoleArn(value string) *AWSBackupConfigBuilder {
+func (b *AwsBackupConfigBuilder) RoleArn(value string) *AwsBackupConfigBuilder {
 	b.roleArn = value
 	b.bitmap_ |= 8
 	return b
 }
 
 // Copy copies the attributes of the given object into this builder, discarding any previous values.
-func (b *AWSBackupConfigBuilder) Copy(object *AWSBackupConfig) *AWSBackupConfigBuilder {
+func (b *AwsBackupConfigBuilder) Copy(object *AwsBackupConfig) *AwsBackupConfigBuilder {
 	if object == nil {
 		return b
 	}
@@ -81,9 +81,9 @@ func (b *AWSBackupConfigBuilder) Copy(object *AWSBackupConfig) *AWSBackupConfigB
 	return b
 }
 
-// Build creates a 'AWS_backup_config' object using the configuration stored in the builder.
-func (b *AWSBackupConfigBuilder) Build() (object *AWSBackupConfig, err error) {
-	object = new(AWSBackupConfig)
+// Build creates a 'aws_backup_config' object using the configuration stored in the builder.
+func (b *AwsBackupConfigBuilder) Build() (object *AwsBackupConfig, err error) {
+	object = new(AwsBackupConfig)
 	object.bitmap_ = b.bitmap_
 	object.s3Bucket = b.s3Bucket
 	object.accountId = b.accountId

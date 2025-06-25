@@ -19,10 +19,10 @@ limitations under the License.
 
 package v1 // github.com/openshift-online/ocm-api-model/clientapi/clustersmgmt/v1
 
-// AWSBackupConfig represents the values of the 'AWS_backup_config' type.
+// AwsBackupConfig represents the values of the 'aws_backup_config' type.
 //
 // Backup configuration for AWS clusters
-type AWSBackupConfig struct {
+type AwsBackupConfig struct {
 	bitmap_             uint32
 	s3Bucket            string
 	accountId           string
@@ -31,7 +31,7 @@ type AWSBackupConfig struct {
 }
 
 // Empty returns true if the object is empty, i.e. no attribute has a value.
-func (o *AWSBackupConfig) Empty() bool {
+func (o *AwsBackupConfig) Empty() bool {
 	return o == nil || o.bitmap_ == 0
 }
 
@@ -39,7 +39,7 @@ func (o *AWSBackupConfig) Empty() bool {
 // the zero value of the type if the attribute doesn't have a value.
 //
 // Name of the S3 bucket used to save the backup
-func (o *AWSBackupConfig) S3Bucket() string {
+func (o *AwsBackupConfig) S3Bucket() string {
 	if o != nil && o.bitmap_&1 != 0 {
 		return o.s3Bucket
 	}
@@ -50,7 +50,7 @@ func (o *AWSBackupConfig) S3Bucket() string {
 // a flag indicating if the attribute has a value.
 //
 // Name of the S3 bucket used to save the backup
-func (o *AWSBackupConfig) GetS3Bucket() (value string, ok bool) {
+func (o *AwsBackupConfig) GetS3Bucket() (value string, ok bool) {
 	ok = o != nil && o.bitmap_&1 != 0
 	if ok {
 		value = o.s3Bucket
@@ -62,7 +62,7 @@ func (o *AWSBackupConfig) GetS3Bucket() (value string, ok bool) {
 // the zero value of the type if the attribute doesn't have a value.
 //
 // ID of the AWS Disaster Recovery (DR) account
-func (o *AWSBackupConfig) AccountId() string {
+func (o *AwsBackupConfig) AccountId() string {
 	if o != nil && o.bitmap_&2 != 0 {
 		return o.accountId
 	}
@@ -73,7 +73,7 @@ func (o *AWSBackupConfig) AccountId() string {
 // a flag indicating if the attribute has a value.
 //
 // ID of the AWS Disaster Recovery (DR) account
-func (o *AWSBackupConfig) GetAccountId() (value string, ok bool) {
+func (o *AwsBackupConfig) GetAccountId() (value string, ok bool) {
 	ok = o != nil && o.bitmap_&2 != 0
 	if ok {
 		value = o.accountId
@@ -85,7 +85,7 @@ func (o *AWSBackupConfig) GetAccountId() (value string, ok bool) {
 // the zero value of the type if the attribute doesn't have a value.
 //
 // ARN of the identity provider created in the Disaster Recovery (DR) account for the Management Cluster
-func (o *AWSBackupConfig) IdentityProviderArn() string {
+func (o *AwsBackupConfig) IdentityProviderArn() string {
 	if o != nil && o.bitmap_&4 != 0 {
 		return o.identityProviderArn
 	}
@@ -96,7 +96,7 @@ func (o *AWSBackupConfig) IdentityProviderArn() string {
 // a flag indicating if the attribute has a value.
 //
 // ARN of the identity provider created in the Disaster Recovery (DR) account for the Management Cluster
-func (o *AWSBackupConfig) GetIdentityProviderArn() (value string, ok bool) {
+func (o *AwsBackupConfig) GetIdentityProviderArn() (value string, ok bool) {
 	ok = o != nil && o.bitmap_&4 != 0
 	if ok {
 		value = o.identityProviderArn
@@ -108,7 +108,7 @@ func (o *AWSBackupConfig) GetIdentityProviderArn() (value string, ok bool) {
 // the zero value of the type if the attribute doesn't have a value.
 //
 // ARN of the role used by the CS Trusted Account to gain access to the Disaster Recovery (DR) account
-func (o *AWSBackupConfig) RoleArn() string {
+func (o *AwsBackupConfig) RoleArn() string {
 	if o != nil && o.bitmap_&8 != 0 {
 		return o.roleArn
 	}
@@ -119,7 +119,7 @@ func (o *AWSBackupConfig) RoleArn() string {
 // a flag indicating if the attribute has a value.
 //
 // ARN of the role used by the CS Trusted Account to gain access to the Disaster Recovery (DR) account
-func (o *AWSBackupConfig) GetRoleArn() (value string, ok bool) {
+func (o *AwsBackupConfig) GetRoleArn() (value string, ok bool) {
 	ok = o != nil && o.bitmap_&8 != 0
 	if ok {
 		value = o.roleArn
@@ -127,27 +127,27 @@ func (o *AWSBackupConfig) GetRoleArn() (value string, ok bool) {
 	return
 }
 
-// AWSBackupConfigListKind is the name of the type used to represent list of objects of
-// type 'AWS_backup_config'.
-const AWSBackupConfigListKind = "AWSBackupConfigList"
+// AwsBackupConfigListKind is the name of the type used to represent list of objects of
+// type 'aws_backup_config'.
+const AwsBackupConfigListKind = "AwsBackupConfigList"
 
-// AWSBackupConfigListLinkKind is the name of the type used to represent links to list
-// of objects of type 'AWS_backup_config'.
-const AWSBackupConfigListLinkKind = "AWSBackupConfigListLink"
+// AwsBackupConfigListLinkKind is the name of the type used to represent links to list
+// of objects of type 'aws_backup_config'.
+const AwsBackupConfigListLinkKind = "AwsBackupConfigListLink"
 
-// AWSBackupConfigNilKind is the name of the type used to nil lists of objects of
-// type 'AWS_backup_config'.
-const AWSBackupConfigListNilKind = "AWSBackupConfigListNil"
+// AwsBackupConfigNilKind is the name of the type used to nil lists of objects of
+// type 'aws_backup_config'.
+const AwsBackupConfigListNilKind = "AwsBackupConfigListNil"
 
-// AWSBackupConfigList is a list of values of the 'AWS_backup_config' type.
-type AWSBackupConfigList struct {
+// AwsBackupConfigList is a list of values of the 'aws_backup_config' type.
+type AwsBackupConfigList struct {
 	href  string
 	link  bool
-	items []*AWSBackupConfig
+	items []*AwsBackupConfig
 }
 
 // Len returns the length of the list.
-func (l *AWSBackupConfigList) Len() int {
+func (l *AwsBackupConfigList) Len() int {
 	if l == nil {
 		return 0
 	}
@@ -155,22 +155,22 @@ func (l *AWSBackupConfigList) Len() int {
 }
 
 // Items sets the items of the list.
-func (l *AWSBackupConfigList) SetLink(link bool) {
+func (l *AwsBackupConfigList) SetLink(link bool) {
 	l.link = link
 }
 
 // Items sets the items of the list.
-func (l *AWSBackupConfigList) SetHREF(href string) {
+func (l *AwsBackupConfigList) SetHREF(href string) {
 	l.href = href
 }
 
 // Items sets the items of the list.
-func (l *AWSBackupConfigList) SetItems(items []*AWSBackupConfig) {
+func (l *AwsBackupConfigList) SetItems(items []*AwsBackupConfig) {
 	l.items = items
 }
 
 // Items returns the items of the list.
-func (l *AWSBackupConfigList) Items() []*AWSBackupConfig {
+func (l *AwsBackupConfigList) Items() []*AwsBackupConfig {
 	if l == nil {
 		return nil
 	}
@@ -178,13 +178,13 @@ func (l *AWSBackupConfigList) Items() []*AWSBackupConfig {
 }
 
 // Empty returns true if the list is empty.
-func (l *AWSBackupConfigList) Empty() bool {
+func (l *AwsBackupConfigList) Empty() bool {
 	return l == nil || len(l.items) == 0
 }
 
 // Get returns the item of the list with the given index. If there is no item with
 // that index it returns nil.
-func (l *AWSBackupConfigList) Get(i int) *AWSBackupConfig {
+func (l *AwsBackupConfigList) Get(i int) *AwsBackupConfig {
 	if l == nil || i < 0 || i >= len(l.items) {
 		return nil
 	}
@@ -197,12 +197,12 @@ func (l *AWSBackupConfigList) Get(i int) *AWSBackupConfig {
 //
 // If you don't need to modify the returned slice consider using the Each or Range
 // functions, as they don't need to allocate a new slice.
-func (l *AWSBackupConfigList) Slice() []*AWSBackupConfig {
-	var slice []*AWSBackupConfig
+func (l *AwsBackupConfigList) Slice() []*AwsBackupConfig {
+	var slice []*AwsBackupConfig
 	if l == nil {
-		slice = make([]*AWSBackupConfig, 0)
+		slice = make([]*AwsBackupConfig, 0)
 	} else {
-		slice = make([]*AWSBackupConfig, len(l.items))
+		slice = make([]*AwsBackupConfig, len(l.items))
 		copy(slice, l.items)
 	}
 	return slice
@@ -211,7 +211,7 @@ func (l *AWSBackupConfigList) Slice() []*AWSBackupConfig {
 // Each runs the given function for each item of the list, in order. If the function
 // returns false the iteration stops, otherwise it continues till all the elements
 // of the list have been processed.
-func (l *AWSBackupConfigList) Each(f func(item *AWSBackupConfig) bool) {
+func (l *AwsBackupConfigList) Each(f func(item *AwsBackupConfig) bool) {
 	if l == nil {
 		return
 	}
@@ -225,7 +225,7 @@ func (l *AWSBackupConfigList) Each(f func(item *AWSBackupConfig) bool) {
 // Range runs the given function for each index and item of the list, in order. If
 // the function returns false the iteration stops, otherwise it continues till all
 // the elements of the list have been processed.
-func (l *AWSBackupConfigList) Range(f func(index int, item *AWSBackupConfig) bool) {
+func (l *AwsBackupConfigList) Range(f func(index int, item *AwsBackupConfig) bool) {
 	if l == nil {
 		return
 	}

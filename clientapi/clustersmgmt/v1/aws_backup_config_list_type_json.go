@@ -26,11 +26,11 @@ import (
 	"github.com/openshift-online/ocm-api-model/clientapi/helpers"
 )
 
-// MarshalAWSBackupConfigList writes a list of values of the 'AWS_backup_config' type to
+// MarshalAwsBackupConfigList writes a list of values of the 'aws_backup_config' type to
 // the given writer.
-func MarshalAWSBackupConfigList(list []*AWSBackupConfig, writer io.Writer) error {
+func MarshalAwsBackupConfigList(list []*AwsBackupConfig, writer io.Writer) error {
 	stream := helpers.NewStream(writer)
-	WriteAWSBackupConfigList(list, stream)
+	WriteAwsBackupConfigList(list, stream)
 	err := stream.Flush()
 	if err != nil {
 		return err
@@ -38,37 +38,37 @@ func MarshalAWSBackupConfigList(list []*AWSBackupConfig, writer io.Writer) error
 	return stream.Error
 }
 
-// WriteAWSBackupConfigList writes a list of value of the 'AWS_backup_config' type to
+// WriteAwsBackupConfigList writes a list of value of the 'aws_backup_config' type to
 // the given stream.
-func WriteAWSBackupConfigList(list []*AWSBackupConfig, stream *jsoniter.Stream) {
+func WriteAwsBackupConfigList(list []*AwsBackupConfig, stream *jsoniter.Stream) {
 	stream.WriteArrayStart()
 	for i, value := range list {
 		if i > 0 {
 			stream.WriteMore()
 		}
-		WriteAWSBackupConfig(value, stream)
+		WriteAwsBackupConfig(value, stream)
 	}
 	stream.WriteArrayEnd()
 }
 
-// UnmarshalAWSBackupConfigList reads a list of values of the 'AWS_backup_config' type
+// UnmarshalAwsBackupConfigList reads a list of values of the 'aws_backup_config' type
 // from the given source, which can be a slice of bytes, a string or a reader.
-func UnmarshalAWSBackupConfigList(source interface{}) (items []*AWSBackupConfig, err error) {
+func UnmarshalAwsBackupConfigList(source interface{}) (items []*AwsBackupConfig, err error) {
 	iterator, err := helpers.NewIterator(source)
 	if err != nil {
 		return
 	}
-	items = ReadAWSBackupConfigList(iterator)
+	items = ReadAwsBackupConfigList(iterator)
 	err = iterator.Error
 	return
 }
 
-// ReadAWSBackupConfigList reads list of values of the ”AWS_backup_config' type from
+// ReadAwsBackupConfigList reads list of values of the ”aws_backup_config' type from
 // the given iterator.
-func ReadAWSBackupConfigList(iterator *jsoniter.Iterator) []*AWSBackupConfig {
-	list := []*AWSBackupConfig{}
+func ReadAwsBackupConfigList(iterator *jsoniter.Iterator) []*AwsBackupConfig {
+	list := []*AwsBackupConfig{}
 	for iterator.ReadArray() {
-		item := ReadAWSBackupConfig(iterator)
+		item := ReadAwsBackupConfig(iterator)
 		list = append(list, item)
 	}
 	return list

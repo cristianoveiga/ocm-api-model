@@ -25,7 +25,7 @@ package v1 // github.com/openshift-online/ocm-api-model/clientapi/clustersmgmt/v
 type AWSShard struct {
 	bitmap_           uint32
 	ecrRepositoryURLs []string
-	backupConfigs     map[string]*AWSBackupConfig
+	backupConfigs     map[string]*AwsBackupConfig
 }
 
 // Empty returns true if the object is empty, i.e. no attribute has a value.
@@ -60,7 +60,7 @@ func (o *AWSShard) GetECRRepositoryURLs() (value []string, ok bool) {
 // the zero value of the type if the attribute doesn't have a value.
 //
 // Backup configurations per Management Cluster ID
-func (o *AWSShard) BackupConfigs() map[string]*AWSBackupConfig {
+func (o *AWSShard) BackupConfigs() map[string]*AwsBackupConfig {
 	if o != nil && o.bitmap_&2 != 0 {
 		return o.backupConfigs
 	}
@@ -71,7 +71,7 @@ func (o *AWSShard) BackupConfigs() map[string]*AWSBackupConfig {
 // a flag indicating if the attribute has a value.
 //
 // Backup configurations per Management Cluster ID
-func (o *AWSShard) GetBackupConfigs() (value map[string]*AWSBackupConfig, ok bool) {
+func (o *AWSShard) GetBackupConfigs() (value map[string]*AwsBackupConfig, ok bool) {
 	ok = o != nil && o.bitmap_&2 != 0
 	if ok {
 		value = o.backupConfigs
